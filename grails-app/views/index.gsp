@@ -1,3 +1,4 @@
+<%@ page import="emoji.urls.Emoji" %>
 <!doctype html>
 <html>
 <head>
@@ -53,25 +54,14 @@
 
     <div id="content" role="main">
         <section class="row colset-2-its">
-            <h1>Welcome to Grails</h1>
-
+            <h1>Do you ${Emoji.heart} Grails?</h1>
+            <h2>Show your support:</h2>
             <p>
-                Congratulations, you have successfully started your first Grails application! At the moment
-                this is the default page, feel free to modify it to either redirect to a controller or display
-                whatever content you may choose. Below is a list of controllers that are currently deployed in
-                this application, click on each to execute its default action:
+                <g:link controller="emoji" action="❤" id="groovy">I do ${Emoji.heart} Groovy</g:link>
             </p>
-
-            <div id="controllers" role="navigation">
-                <h2>Available Controllers:</h2>
-                <ul>
-                    <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                        </li>
-                    </g:each>
-                </ul>
-            </div>
+            <p>
+                <g:link controller="emoji" action="index" params="${[emoji:Emoji.sparkling_heart]}" id="grails">I do ${Emoji.sparkling_heart} Grails</g:link>
+            </p>
         </section>
     </div>
 
